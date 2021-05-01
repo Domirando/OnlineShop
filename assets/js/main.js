@@ -1,5 +1,4 @@
 let num_1 = 0
-alert('Hello world!')
 function l_phones() {
     num_1++
     if(num_1 % 2 != 0){
