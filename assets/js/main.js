@@ -41,7 +41,6 @@ function iPhone() {
         m_iphone.style.display = "none";
     }
 }
-// OnlineShop
 
 let iphone8 = {
     memory: '64GB',
