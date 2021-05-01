@@ -1,0 +1,179 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+nav {
+    height: 70px !important;
+    top: 0 !important;
+}
+
+#left {
+    width: 20%;
+    float: left;
+    color: black;
+    padding-left: 80px;
+}
+
+#right {
+    border-left: 2px solid #0d6efd;
+    float: right;
+    width: 80%;
+    position: relative;
+}
+
+.about {
+    position: absolute;
+    margin-left: 20px;
+    display: inline-block;
+
+}
+
+.navbar {
+    padding-left: 80px !important;
+}
+
+#counter_box {
+    border-radius: 50% 50% 0% 50%;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    color: #0c63e4;
+    background-color: white;
+    margin-bottom: 27px;
+
+}
+
+#counter {
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+#phones {
+    position: relative;
+    cursor: pointer;
+}
+
+#laptops {
+    cursor: pointer;
+    position: relative;
+}
+
+#companies_c {
+    display: none;
+    margin-left: 40px;
+}
+
+#companies_p {
+    display: none;
+    margin-left: 40px;
+}
+
+#text {
+    display: none
+}
+
+article {
+    margin: 10px;
+}
+
+article>img {
+    width: auto;
+}
+
+.sort {
+    float: right;
+    margin-right: 80px;
+}
+
+footer {
+    display: block;
+    margin-top: 300px;
+}
+
+nav>.bi-cart2 {
+    color: white;
+    height: 45px;
+    width: 45px;
+    margin-right: 80px;
+}
+
+h6 {
+    display: inline-block;
+}
+
+.beginning {
+    text-align: center;
+    font-size: 26px;
+}
+
+button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-right: 10px;
+}
+
+.bi-cart2 {
+    color: white;
+    height: 40px;
+    width: 40px;
+    padding-right: 5px;
+}
+
+.carousel-item>img {
+    height: 650px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+article {
+    padding: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0769f8;
+}
+
+#orders {
+    padding: 30px;
+    position: relative;
+    background-color: white;
+    margin-top: 100px;
+    background-color: rgb(219, 214, 214);
+    width: 250px;
+    border-radius: 10px;
+    /* color: #0d6efd; */
+
+}
+
+/* footer {
+    background-color: #0d6efd;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    margin-top: 50%;
+    height: 100px;
+    color: white;
+} */
+footer{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}

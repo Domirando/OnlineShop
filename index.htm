@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineShop</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">OnlineShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                </li>
+            </ul>
+        </div>
+        <div id="orders" style="display: none;">
+            <p id="order"></p>
+        </div>
+        <div id="counter_box">
+            <p id="counter">0</p>
+        </div>
+        <svg onclick="cart()" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart2"
+            viewBox="0 0 16 16">
+            <path
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+        </svg>
+    </nav>
+    <main id="left">
+        <div id="phones" onclick="l_phones()">Phones
+            <svg id="menu_right1" class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" />
+            </svg>
+        </div>
+        <div id="companies_p">
+            <input type="checkbox" id="myCheck_iphone" onclick="iPhone()">iPhone</input><br>
+            <input type="checkbox" id="myCheck_sony" onclick="sony()">SONY</input><br>
+            <input type="checkbox" id="myCheck_huawei" onclick="huawei()">HUAWEI</input><br>
+            <input type="checkbox" id="myCheck_honor" onclick="honor()">HONOR</input><br>
+        </div>
+        <div id="laptops" onclick="l_laptops()">Laptops
+            <svg id="menu_right2" class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20"
+                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" />
+            </svg>
+        </div>
+        <div id="companies_c">
+            <input type="checkbox" id="myCheck_macBook" onclick="macBook()">APPLE</input><br>
+            <input type="checkbox" id="myCheck_lenovo" onclick="lenovo()">LENOVO</input><br>
+            <input type="checkbox" id="myCheck_acer" onclick="acer()">ACER</input><br>
+            <input type="checkbox" id="myCheck_hp" onclick="hp()">HP</input><br>
+        </div>
+    </main>
+    <main id="right">
+        <div id="main">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/images/wallpaper1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/images/wallpeper2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+        <div id="iphone" style="display:none">
+            <p class="beginning">Cell phones of Apple brand Company!</p>
+            <div class="sort">
+                <label>Sort by: </label>
+                <select>
+                    <option>Price</option>
+                    <option>Date</option>
+                </select>
+            </div><br>
+            <article id="apple_first"><img id="img1">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="iP8_version"></p>
+                    <h6>Date: </h6>
+                    <p id="iP8_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="iP8_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="iP8_price"></p>
+                    <button id="btn0" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="apple_second"><img id="img2">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="iP11pro_version"></p>
+                    <h6>Date: </h6>
+                    <p id="iP11pro_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="iP11pro_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="iP11pro_price"></p>
+                    <button id="btn1" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="apple_third"><img id="img3">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="iPXS_version"></p>
+                    <h6>Date: </h6>
+                    <p id="iPXS_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="iPXS_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="iPXS_price"></p>
+                    <button id="btn2" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+        </div>
+        <div id="sony" style="display:none">
+            <p class="beginning">Cell phones of Sony Xperia brand Company!</p>
+            <div class="sort">
+                <label>Sort by: </label>
+                <select>
+                    <option>Price</option>
+                    <option>Date</option>
+                </select>
+            </div><br>
+            <article id="sony_first"><img id="img1_sony">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="xperia5_version"></p>
+                    <h6>Date: </h6>
+                    <p id="xperia5_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="xperia5_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="xperia5_price"></p>
+                    <button id="btn3" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="sony_second"><img id="img2_sony">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="xperia10_version"></p>
+                    <h6>Date: </h6>
+                    <p id="xperia10_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="xperia10_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="xperia10_price"></p>
+                    <button onclick="count()" id="sony2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="sony_third"><img id="img3_sony">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="xperia7_version"></p>
+                    <h6>Date: </h6>
+                    <p id="xperia7_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="xperia7_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="xperia7_price"></p>
+                    <button id="sony3_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="huawei" style="display:none">
+            <p class="beginning">Cell phones of Huawei brand Company!</p>
+            <div class="sort">
+                <label>Sort by: </label>
+                <select>
+                    <option>Price</option>
+                    <option>Date</option>
+                </select>
+            </div><br>
+            <article id="huawei_first"><img id="img1_huawei">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="huawei_version"></p>
+                    <h6>Date: </h6>
+                    <p id="huawei_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="huawei_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="huawei_price"></p>
+                    <button id="huawei1_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="huawei_second"><img id="img2_huawei">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="huawei2_version"></p>
+                    <h6>Date: </h6>
+                    <p id="huawei2_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="huawei2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="huawei2_price"></p>
+                    <button onclick="count()" id="huawei2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="huawei_third"><img id="img3_huawei">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="huawei3_version"></p>
+                    <h6>Date: </h6>
+                    <p id="huawei3_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="huawei3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="huawei3_price"></p>
+                    <button id="huawei3_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="honor" style="display:none">
+            <p class="beginning">Cell phones of Honor brand Company!</p>
+            <div class="sort">
+                <label>Sort by: </label>
+                <select>
+                    <option>Price</option>
+                    <option>Date</option>
+                </select>
+            </div><br>
+            <article id="honor_first"><img id="img1_honor">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="honor1_version"></p>
+                    <h6>Date: </h6>
+                    <p id="honor1_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="honor1_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="honor1_price"></p>
+                    <button onclick="count()" id="honor1_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="honor_second"><img id="img2_honor">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="honor2_version"></p>
+                    <h6>Date: </h6>
+                    <p id="honor2_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="honor2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="honor2_price"></p>
+                    <button id="honor2_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="honor_third"><img id="img3_honor">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="honor3_version"></p>
+                    <h6>Date: </h6>
+                    <p id="honor3_date"></p>
+                    <h6>Memory: </h6>
+                    <p id="honor3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="honor3_price"></p>
+                    <button onclick="count()" id="honor3_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">                     <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="macBook" style="display:none">
+            <p class="beginning">Laptops of Apple brand Company!</p>
+            <div class="sort">
+                <label>Sort by: </label>
+                <select>
+                    <option>Price</option>
+                    <option>Date</option>
+                </select>
+            </div><br>
+            <article id="macBook_first"><img id="img1_macBook">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="macBook1_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="macBook1_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="macBook1_price"></p>
+                    <button id="macBook1_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                    <hr>
+                </div>
+            </article>
+            <article id="macBook_second"><img id="img2_macBook">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="macBook2_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="macBook2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="macBook2_price"></p>
+                    <button onclick="count()" id="macBook2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="macBook_third"><img id="img3_macBook">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="macBook3_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="macBook3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="macBook3_price"></p>
+                    <button id="macBook3_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="lenovo" style="display:none">
+            <p class="beginning">Laptops of Lenovo brand Company!</p>
+            <article id="lenovo_first"><img id="img1_lenovo">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="lenovo_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="lenovo_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="lenovo_price"></p>
+                    <button onclick="count()" id="lenovo1_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="lenovo_second"><img id="img2_lenovo">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="lenovo2_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="lenovo2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="lenovo2_price"></p>
+                    <button onclick="count()" id="lenovo2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="lenovo_third"><img id="img3_lenovo">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="lenovo3_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="lenovo3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="lenovo3_price"></p>
+                    <button id="lenovo3_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="acer" style="display:none">
+            <p class="beginning">Cell phones of Acer brand Company!</p>
+            <article id="acer_first"><img id="img1_acer">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="acer1_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="acer1_version"></p>
+                    <h6>Price: </h6>
+                    <p id="acer1_price"></p>
+                    <button onclick="count()" id="acer1_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="acer_second"><img id="img2_acer">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="acer2_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="acer2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="acer2_price"></p>
+                    <button onclick="count()" id="acer2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="acer_third"><img id="img3_acer">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="acer3_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="acer3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="acer3_price"></p>
+                    <button id="acer3_btn" onclick="count()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+        </div>
+        <div id="hp" style="display:none">
+            <p class="beginning">Laptops of HP brand Company!</p>
+            <article id="hp_first"><img id="img1_hp">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="hp1_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="hp1_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="hp1_price"></p>
+                    <button onclick="count()" id="hp1_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="hp_second"><img id="img2_hp">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="hp2_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="hp2_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="hp2_price"></p>
+                    <button onclick="count()" id="hp2_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+            <hr>
+            <article id="hp_third"><img id="img3_hp">
+                <div class="about">
+                    <h6>Version: </h6>
+                    <p id="hp3_version"></p>
+                    <h6>Memory: </h6>
+                    <p id="hp3_memory"></p>
+                    <h6>Price: </h6>
+                    <p id="hp3_price"></p>
+                    <button onclick="count()" id="hp3_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>Add to Cart</button>
+                </div>
+            </article>
+        </div>
+    </main>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
