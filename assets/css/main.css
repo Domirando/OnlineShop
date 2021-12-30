@@ -88,10 +88,6 @@ article>img {
     margin-right: 80px;
 }
 
-footer {
-    display: block;
-    margin-top: 300px;
-}
 
 nav>.bi-cart2 {
     color: white;
@@ -162,18 +158,4 @@ article {
 
 }
 
-/* footer {
-    background-color: #0d6efd;
-    text-align: center;
-    font-size: 30px;
-    position: relative;
-    margin-top: 50%;
-    height: 100px;
-    color: white;
-} */
-footer{
-    text-align: center;
-    font-size: 25px;
-    margin-top: 150px;
-    margin-bottom: 50px;
-}
+

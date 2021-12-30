@@ -1,0 +1,10 @@
+#contact{
+    margin-top: 60px;
+}
+.contact-title, .contact-form{
+    width: 50% !important;
+    margin: 0 auto;
+}
+.submit:hover{
+    transform: scale(1.01);
+}
